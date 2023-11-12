@@ -35,4 +35,26 @@ We will select and work with a frame from the signal.
 
 ![image](https://github.com/Kamykaze2020/Speech-based-gender-detection-app-with-tkinter/assets/62187923/d8b573d9-6fbd-4b88-aee3-0b0d0bd808bf)
 
+# Tracing the signal in frequency with FT (Fourier Transform)
 
+Another useful graphical representation is that of the frequency content or spectrum of the note. The standard way to do this is with a discrete Fourier transform. Basically, we take a sound signal and isolate the sine wave frequencies that make up that sound.
+
+![image](https://github.com/Kamykaze2020/Speech-based-gender-detection-app-with-tkinter/assets/62187923/97e6a002-14f7-4071-b990-61a26e451ed4)
+
+So we will use the np.fft.rfft() function. This is intended for data that does not contain complex numbers only real numbers. The function np.fft.rfftfreq() always goes together with np.fft.rfft() because it provides the way to get the appropriate frequency units:
+
+**fft_spectrum = np.fft.rfft(signal)**
+
+**freq = np.fft.rfftfreq(signal.size, d=1./sampFreq)**
+
+![image](https://github.com/Kamykaze2020/Speech-based-gender-detection-app-with-tkinter/assets/62187923/61f84394-4c0a-4aae-ab62-f6d3f9413b0f)
+
+![image](https://github.com/Kamykaze2020/Speech-based-gender-detection-app-with-tkinter/assets/62187923/15821143-db0d-4dc3-80fc-a3b11a4cd16f)
+
+The graph shows a large peak at and around 60 Hz (black arrow). This is the frequency standard used for AC (Alternating Current) in North America, where the recording was probably made, and is very noticeable when playing a sound. In Europe, for example, the standard frequency is 50 Hz.
+
+This effect is called electrical hum. In short, because of the ubiquitous AC electromagnetic fields from nearby appliances and cables, 60 Hz electrical noise can penetrate audio systems.
+
+The second highest peak is called the fundamental frequency (green arrow) - and it is close to 233 Hz. The other peaks are called overtone harmonics and are multiples of the fundamental frequency. We see that, except for the 60 Hz noise, there are peaks around 233 Hz, 465 Hz, 698 Hz, 932 Hz, 1167 Hz, 1401 Hz, and 1638 Hz (all are multiples of ~233 Hz).
+
+# Installation
