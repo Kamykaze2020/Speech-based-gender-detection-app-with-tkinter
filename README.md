@@ -3,6 +3,8 @@ Speech based gender detection app with tkinter that show the user the gender of 
 
 The application takes a .wav file from the user's computer, stores the data inside a vector, selects a semgemnt of the signal and makes a high pass filter so that the noise from the file is avoided. The smoothed signal is then used to calculate the fundamental frequency so that we can say the gender.
 
+The application stores the answers in a .txt file inside the '**DATA**' folder. Keep the folder '**DATA**' inside the project repository, otherwise the program won't work correctly!
+
 # Interface
 
 ![8](https://github.com/Kamykaze2020/Speech-based-gender-detection-app-with-tkinter/assets/62187923/6711d25b-eaf8-4422-8dae-5871e8c80c37)
@@ -55,14 +57,16 @@ The graph shows a large peak at and around 60 Hz (black arrow). This is the freq
 
 This effect is called electrical hum. In short, because of the ubiquitous AC electromagnetic fields from nearby appliances and cables, 60 Hz electrical noise can penetrate audio systems.
 
-The second highest peak is called the fundamental frequency (green arrow) - and it is close to 233 Hz. The other peaks are called overtone harmonics and are multiples of the fundamental frequency. We see that, except for the 60 Hz noise, there are peaks around 233 Hz, 465 Hz, 698 Hz, 932 Hz, 1167 Hz, 1401 Hz, and 1638 Hz (all are multiples of ~233 Hz).
+The second highest peak is called **the fundamental frequency** (green arrow) - and it is close to 233 Hz. The other peaks are called overtone harmonics and are multiples of the fundamental frequency. We see that, except for the 60 Hz noise, there are peaks around 233 Hz, 465 Hz, 698 Hz, 932 Hz, 1167 Hz, 1401 Hz, and 1638 Hz (all are multiples of ~233 Hz).
 
 # Installation
 
 Download the file as a .zip file and extract it. You will need to open the .py file and run it in PyCharm. This application need multiple packages to be installed.
 
+Keep the folder '**DATA**' inside the project repository, otherwise the program won't work correctly!
+
 You can install the necessary packages through terminal with the pip commands:
 
-pip install scipy
+**pip install scipy**
 
-pip install matplotlib
+**pip install matplotlib**
