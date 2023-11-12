@@ -58,3 +58,11 @@ This effect is called electrical hum. In short, because of the ubiquitous AC ele
 The second highest peak is called the fundamental frequency (green arrow) - and it is close to 233 Hz. The other peaks are called overtone harmonics and are multiples of the fundamental frequency. We see that, except for the 60 Hz noise, there are peaks around 233 Hz, 465 Hz, 698 Hz, 932 Hz, 1167 Hz, 1401 Hz, and 1638 Hz (all are multiples of ~233 Hz).
 
 # Installation
+
+Download the file as a .zip file and extract it. You will need to open the .py file and run it in PyCharm. This application need multiple packages to be installed.
+
+You can install the necessary packages through terminal with the pip commands:
+
+pip install scipy
+
+pip install matplotlib
